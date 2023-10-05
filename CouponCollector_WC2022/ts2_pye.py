@@ -22,4 +22,9 @@ def crear_album2(figus_total):
 
 print(crear_album(20))
 print(crear_album2(20))
-# def cuantos_paquetes(figus_total, figus_paquete):
+
+#https://docs.python.org/3/library/random.html
+def comprar_paquete(figus_total, figus_paquete):
+  return [random.randint(0, figus_total -1) for _ in range(figus_paquete)]
+
+print(comprar_paquete(860,5))
