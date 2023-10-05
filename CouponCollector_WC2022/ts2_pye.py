@@ -25,6 +25,6 @@ print(crear_album2(20))
 
 #https://docs.python.org/3/library/random.html
 def comprar_paquete(figus_total, figus_paquete):
-  return [random.randint(0, figus_total -1) for _ in range(figus_paquete)]
+  return [random.randint(1, figus_total) for _ in range(figus_paquete)]
 
 print(comprar_paquete(860,5))
