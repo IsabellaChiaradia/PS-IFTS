@@ -8,7 +8,7 @@ Original file is located at
 """
 
 import numpy as np
-import random
+import random as rd
 
 def crear_album(figus_total):
   album = []
@@ -25,6 +25,5 @@ print(crear_album2(20))
 
 #https://docs.python.org/3/library/random.html
 def comprar_paquete(figus_total, figus_paquete):
-  return [random.randint(1, figus_total) for _ in range(figus_paquete)]
-
+  return rd.sample(range(figus_total), figus_paquete)
 print(comprar_paquete(860,5))
