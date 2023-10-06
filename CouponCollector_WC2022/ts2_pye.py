@@ -27,3 +27,8 @@ print(crear_album2(20))
 def comprar_paquete(figus_total, figus_paquete):
   return rd.sample(range(figus_total), figus_paquete)
 print(comprar_paquete(860,5))
+
+
+def pegar_figus(album, paquete):
+    for figu in paquete:
+        album[figu] = 1 
