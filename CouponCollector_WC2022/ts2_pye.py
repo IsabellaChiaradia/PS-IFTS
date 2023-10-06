@@ -32,3 +32,9 @@ print(comprar_paquete(860,5))
 def pegar_figus(album, paquete):
     for figu in paquete:
         album[figu] = 1 
+
+
+def album_incomp(album):
+    return 0 in album
+
+def cuantos_paquetes(figus_total, figus_paquete):
