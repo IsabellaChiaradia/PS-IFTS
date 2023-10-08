@@ -38,3 +38,9 @@ def album_incomp(album):
     return 0 in album
 
 def cuantos_paquetes(figus_total, figus_paquete):
+    album = crear_album(figus_total)
+#Creo e inicializo paquetes_compre que será el return final de la funcion
+    paquetes_compre = 0
+
+
+    
