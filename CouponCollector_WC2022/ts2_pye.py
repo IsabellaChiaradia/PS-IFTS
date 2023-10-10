@@ -41,6 +41,13 @@ def cuantos_paquetes(figus_total, figus_paquete):
     album = crear_album(figus_total)
 #Creo e inicializo paquetes_compre que será el return final de la funcion
     paquetes_compre = 0
+#Mientras el album esté incompleto compro paquete, pego figus y aumento el contador de paquetes comprados
+    while album_incomp(album):
+        paquete = comprar_paquete(figus_total, figus_paquete)
+        pegar_figus(album, paquete)
+        paquetes_compre += 1 
+      
+    return paquetes_compre
 
 
     
