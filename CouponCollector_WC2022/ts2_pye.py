@@ -9,6 +9,8 @@ Original file is located at
 
 import numpy as np
 import random as rd
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 def crear_album(figus_total):
   album = []
