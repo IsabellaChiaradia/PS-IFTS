@@ -56,4 +56,6 @@ figus_total = 860
 figus_paquete = 5
 muestras = [cuantos_paquetes(figus_total, figus_paquete) for _ in range (N)]
 print(muestras)
-    
+
+esperanza = np.mean(muestras)
+print(f"La cantidad de paquetes promedio para llenar el álbum es de:  {esperanza}")
