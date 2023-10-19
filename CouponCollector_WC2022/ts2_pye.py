@@ -12,6 +12,7 @@ import random as rd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+rd.seed(98)
 def crear_album(figus_total):
   album = []
   for _ in range(figus_total):
