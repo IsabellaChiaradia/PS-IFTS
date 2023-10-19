@@ -60,3 +60,11 @@ print(muestras)
 
 esperanza = np.mean(muestras)
 print(f"La cantidad de paquetes promedio para llenar el álbum es de:  {esperanza}")
+
+sns.set_palette("deep", desat=.6)
+sns.set_context(rc={"figure.figsize": (8, 4)})
+sns.histplot(muestras, kde=True)
+plt.xlabel("Cantidad de paquetes")
+plt.ylabel("Frecuencia")
+plt.title("Histograma: Cantidad de paquetes necesarios para llenar el álbum")
+plt.show()
