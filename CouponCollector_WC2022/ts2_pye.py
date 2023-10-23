@@ -68,3 +68,12 @@ plt.xlabel("Cantidad de paquetes")
 plt.ylabel("Frecuencia")
 plt.title("Histograma: Cantidad de paquetes necesarios para llenar el álbum")
 plt.show()
+
+n = 860
+def esperanza(n):
+  e = 0
+  for i in range(1,n+1):
+    e = e + n/(n-i+1)
+  return (e)
+esperanzaReal = esperanza(n)/5
+print(esperanzaReal)
