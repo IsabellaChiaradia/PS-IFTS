@@ -77,3 +77,91 @@ def esperanza(n):
   return (e)
 esperanzaReal = esperanza(n)/5
 print(esperanzaReal)
+
+
+datos = [
+    {
+        "anio": 1970,
+        "pais": "Mexico",
+        "album": 271,
+        "figuritaspaquete": 3
+    },
+    {
+        "anio": 1974,
+        "pais": "Alemania",
+        "album": 400,
+        "figuritaspaquete": 5
+    },
+    {
+        "anio": 1978,
+        "pais": "Argentina ★",
+        "album": 400,
+        "figuritaspaquete": 6
+    },
+    {
+        "anio": 1982,
+        "pais": "España",
+        "album": 427,
+        "figuritaspaquete": 4
+    },
+    {
+        "anio": 1986,
+        "pais": "Mexico ★★",
+        "album": 427,
+        "figuritaspaquete": 6
+    },
+    {
+        "anio": 1990,
+        "pais": "Italia",
+        "album": 448,
+        "figuritaspaquete": 6
+    },
+    {
+        "anio": 1994,
+        "pais": "Estados Unidos",
+        "album": 444,
+        "figuritaspaquete": 6
+    },
+    {
+        "anio": 1998,
+        "pais": "Francia",
+        "album": 561,
+        "figuritaspaquete": 5
+    },
+    {
+        "anio": 2002,
+        "pais": "Corea Japon",
+        "album": 576,
+        "figuritaspaquete": 5
+    },
+    {
+        "anio": 2006,
+        "pais": "Alemania",
+        "album": 597,
+        "figuritaspaquete": 5
+    },
+    {
+        "anio": 2010,
+        "pais": "Sudafrica",
+        "album": 638,
+        "figuritaspaquete": 5
+    },
+    {
+        "anio": 2014,
+        "pais": "Brasil",
+        "album": 640,
+        "figuritaspaquete": 5
+    },
+    {
+        "anio": 2018,
+        "pais": "Rusia",
+        "album": 669,
+        "figuritaspaquete": 5
+    },
+    {
+        "anio": 2022,
+        "pais": "Qatar ★★★",
+        "album": 860,
+        "figuritaspaquete": 5
+    }
+]
