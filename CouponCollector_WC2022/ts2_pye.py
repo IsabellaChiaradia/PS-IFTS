@@ -165,3 +165,17 @@ datos = [
         "figuritaspaquete": 5
     }
 ]
+
+
+print(f"En 1000 simulaciones obtenemos que:")
+for edicion in datos:
+    anio = edicion["anio"]
+    album_size = edicion["album"]
+    pais = edicion["pais"]
+    figuritas_per_paquete = edicion["figuritaspaquete"]
+    paquetes_necesarios = [cuantos_paquetes(album_size, figuritas_per_paquete) for _ in range(1000)]
+    esperanzaEdicion = np.mean(paquetes_necesarios)
+    varianzaEdicion = np.var(paquetes_necesarios)
+    print(f"Para el mundial de {pais} {anio}, se necesitaron {esperanzaEdicion} paquetes para llenar el álbum.")
+    print(f"La varianza para el álbum de {pais} {anio} es: {varianzaEdicion}")
+print("")
