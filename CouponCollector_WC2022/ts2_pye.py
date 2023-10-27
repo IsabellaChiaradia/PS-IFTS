@@ -179,3 +179,13 @@ for edicion in datos:
     print(f"Para el mundial de {pais} {anio}, se necesitaron {esperanzaEdicion} paquetes para llenar el álbum.")
     print(f"La varianza para el álbum de {pais} {anio} es: {varianzaEdicion}")
 print("")
+
+
+n = 860
+def esperanza(n):
+  e = 0
+  for i in range(1,n+1):
+    e = e + n/(n-i+1)
+  return (e)
+esperanzaReal = esperanza(n)/5
+print(esperanzaReal)
