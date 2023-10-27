@@ -189,3 +189,17 @@ def esperanza(n):
   return (e)
 esperanzaReal = esperanza(n)/5
 print(esperanzaReal)
+
+def calcular_esperanza_real(album_size, figuritas_paquete):
+    n = album_size
+    esperanza = 0
+    for i in range(1, n + 1):
+        esperanza += n / (n - i + 1)
+    esperanza_real = esperanza / figuritas_paquete
+    return esperanza_real
+
+for edicion in datos:
+    album_size = edicion["album"]
+    figuritas_paquete = edicion["figuritaspaquete"]
+    esperanza_real = calcular_esperanza_real(album_size, figuritas_paquete)
+    print(f"Para el mundial de {edicion['pais']} {edicion['anio']}, la esperanza real es: {esperanza_real}")
