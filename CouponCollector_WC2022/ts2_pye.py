@@ -203,3 +203,28 @@ for edicion in datos:
     figuritas_paquete = edicion["figuritaspaquete"]
     esperanza_real = calcular_esperanza_real(album_size, figuritas_paquete)
     print(f"Para el mundial de {edicion['pais']} {edicion['anio']}, la esperanza real es: {esperanza_real}")
+
+muestrasAlbumes = [];
+contador = -1;
+for edicion in datos:
+    contador+=1
+    anio = edicion["anio"]
+    album_size = edicion["album"]
+    pais = edicion["pais"]
+    figuritas_per_paquete = edicion["figuritaspaquete"]
+    paquetes_necesarios = [cuantos_paquetes(album_size, figuritas_per_paquete) for _ in range(1000)]
+
+    # Luego, agregar un diccionario a la lista creada anteriormente
+    muestrasAlbumes.append({"nombre": edicion["pais"], "anio": edicion["anio"], "muestra": paquetes_necesarios})
+
+muestras = [album['muestra'] for album in muestrasAlbumes[:14]]
+etiquetas = [f'{album["anio"]} - {album["nombre"]}' for album in muestrasAlbumes[:14]]
+
+for muestra, etiqueta in zip(muestras, etiquetas):
+    sns.kdeplot(muestra, common_norm=False, label=etiqueta)
+
+plt.xlabel('Valores')
+plt.ylabel('Frecuencia')
+plt.title('Todos los albumes de figuritas panini')
+plt.legend()
+plt.show()
