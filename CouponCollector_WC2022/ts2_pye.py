@@ -166,6 +166,7 @@ datos = [
     }
 ]
 
+muestrasAlbumes = []
 
 print(f"En 1000 simulaciones obtenemos que:")
 for edicion in datos:
@@ -173,22 +174,15 @@ for edicion in datos:
     album_size = edicion["album"]
     pais = edicion["pais"]
     figuritas_per_paquete = edicion["figuritaspaquete"]
-    paquetes_necesarios = [cuantos_paquetes(album_size, figuritas_per_paquete) for _ in range(1000)]
+    paquetes_necesarios = [cuantos_paquetes(album_size, figuritas_per_paquete) for _ in range(100)]
     esperanzaEdicion = np.mean(paquetes_necesarios)
     varianzaEdicion = np.var(paquetes_necesarios)
+    muestrasAlbumes.append({"nombre": pais, "anio": anio, "muestra": paquetes_necesarios})
+    muestras = [album['muestra'] for album in muestrasAlbumes]
+    etiquetas = [f'{album["anio"]} - {album["nombre"]}' for album in muestrasAlbumes]
     print(f"Para el mundial de {pais} {anio}, se necesitaron {esperanzaEdicion} paquetes para llenar el álbum.")
-    print(f"La varianza para el álbum de {pais} {anio} es: {varianzaEdicion}")
+    # print(f"La varianza para el álbum de {pais} {anio} es: {varianzaEdicion}")
 print("")
-
-
-n = 860
-def esperanza(n):
-  e = 0
-  for i in range(1,n+1):
-    e = e + n/(n-i+1)
-  return (e)
-esperanzaReal = esperanza(n)/5
-print(esperanzaReal)
 
 def calcular_esperanza_real(album_size, figuritas_paquete):
     n = album_size
@@ -204,27 +198,11 @@ for edicion in datos:
     esperanza_real = calcular_esperanza_real(album_size, figuritas_paquete)
     print(f"Para el mundial de {edicion['pais']} {edicion['anio']}, la esperanza real es: {esperanza_real}")
 
-muestrasAlbumes = [];
-contador = -1;
-for edicion in datos:
-    contador+=1
-    anio = edicion["anio"]
-    album_size = edicion["album"]
-    pais = edicion["pais"]
-    figuritas_per_paquete = edicion["figuritaspaquete"]
-    paquetes_necesarios = [cuantos_paquetes(album_size, figuritas_per_paquete) for _ in range(1000)]
-
-    # Luego, agregar un diccionario a la lista creada anteriormente
-    muestrasAlbumes.append({"nombre": edicion["pais"], "anio": edicion["anio"], "muestra": paquetes_necesarios})
-
-muestras = [album['muestra'] for album in muestrasAlbumes[:14]]
-etiquetas = [f'{album["anio"]} - {album["nombre"]}' for album in muestrasAlbumes[:14]]
-
 for muestra, etiqueta in zip(muestras, etiquetas):
     sns.kdeplot(muestra, common_norm=False, label=etiqueta)
 
 plt.xlabel('Valores')
 plt.ylabel('Frecuencia')
-plt.title('Todos los albumes de figuritas panini')
+plt.title('Todos los álbumes de figuritas Panini')
 plt.legend()
 plt.show()
